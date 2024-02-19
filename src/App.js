@@ -1,14 +1,24 @@
-
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Pages/Home';
+import Recipes from './Pages/Recipes';
+import SingleRecipes from './Pages/SingleRecipe';
+import DefaultPage from './Pages/Default';
+import Navbar from './Components/Navbar';
 
 function App() {
-   
-
-    
-
   return (
-    <div className="App">
-      <h1>Hello from our recepie app </h1>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/recepies" exact element={<Recipes />} />
+        <Route path="/singleRecepies/:id" element={<SingleRecipes />} />
+        <Route Component={<DefaultPage />} />
+
+
+      </Routes>
+    </Router>
   );
 }
 
