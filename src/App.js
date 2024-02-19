@@ -6,15 +6,17 @@ import SingleRecipes from './Pages/SingleRecipe';
 import DefaultPage from './Pages/Default';
 import Navbar from './Components/Navbar';
 
+
+
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/recepies" exact element={<Recipes />} />
+        <Route path="/recipes" exact element={<Recipes />} />
         <Route path="/singleRecepies/:id" element={<SingleRecipes />} />
-        <Route Component={<DefaultPage />} />
+        <Route path="*" element={<DefaultPage />} />
 
 
       </Routes>
